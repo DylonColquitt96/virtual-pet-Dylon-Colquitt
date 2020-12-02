@@ -9,6 +9,7 @@ public class virtualPetTest {
         String name = myVirtualPet.nameVirtualPet("James");
         Assert.assertEquals("James", name);
     }
+    //The test above is mainly focused on telling me my pets name
 
     @Test
     public void isTheVirtualPetHungry (){
@@ -16,6 +17,7 @@ public class virtualPetTest {
         int hunger = myVirtualPet.hungerStatus(100);
         Assert.assertEquals(100, hunger);
     }
+    //The test above is mainly focused on telling me if my pet is Hungry
 
     @Test
     public void isMyVirtualPetBored(){
@@ -23,6 +25,7 @@ public class virtualPetTest {
         int excitedOrBored = myVirtualPet.excitedBored(50);
         Assert.assertEquals(50, excitedOrBored);
     }
+    //The test above is mainly focused on telling me if my pet is Bored
 
 
 
