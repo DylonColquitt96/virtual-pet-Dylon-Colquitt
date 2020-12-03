@@ -22,7 +22,7 @@ public class virtualPet {
           setThirstLevel(thirstLevel -1);
           //This set method if found on line 67 on virtualPet class.
           setBoredomLevel(boredomLevel -1);
-          //uses a "set method" where the value can not exceed "maxCounter" but will go down below the "maxCounter"
+          //uses a "set method" where the value can not exceed **maxCount**but will go down below the **maxCount**
           //This set method if found on line 81 on virtualPet class.
 
           System.out.println("Boredom Level: " + boredomLevel + " Hunger Level: " + hungerLevel +
@@ -39,6 +39,7 @@ public class virtualPet {
             hungerLevel = maxCount;
         }
   }
+  //method above is a set method that makes it so that the hunger level can not exceed **maxCount**
 
 
     public boolean getHungerStatus() {
@@ -71,6 +72,7 @@ public class virtualPet {
             thirstLevel = maxCount;
         }
     }
+    //method above is a set method that makes it so that the **thirstlevel** can not exceed **maxCount**
 
     public void drink(int choice){
         if (choice == 1){
@@ -86,6 +88,7 @@ public class virtualPet {
             boredomLevel = maxCount;
         }
     }
+    //method above is a set method that makes it so that the **boredomLevel** can not exceed **maxCount**
 
     public void play (int choice){
         if (choice == 1){
