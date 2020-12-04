@@ -28,7 +28,7 @@ public class virtualPet {
 
 
     public boolean getThirstStatus() {
-        if (hungerLevel <= 10) {
+        if (thirstLevel <= 10) {
             return thirst;
         }
         else
@@ -37,7 +37,7 @@ public class virtualPet {
 
 
     public boolean getTiredStatus() {
-        if (hungerLevel <= 10) {
+        if (energyLevel <= 10) {
             return tired;
         }
         else
@@ -110,9 +110,9 @@ public class virtualPet {
 
     public void drink(int choice){
         if (choice == 1){
-            thirstLevel +=3;
-        } else if (choice == 2){
             thirstLevel +=2;
+        } else if (choice == 2){
+            thirstLevel +=1;
         }
     }
 
@@ -126,20 +126,18 @@ public class virtualPet {
 
     public void play (int choice){
         if (choice == 1){
-            boredomLevel += 3;
-        } else if (choice == 2){
             boredomLevel += 2;
-        } else if ( choice == 3){
+        } else if (choice == 2){
             boredomLevel += 1;
+        } else if ( choice == 3){
+            boredomLevel += 3;
         }
     }
 
     public void rest(int choice){
         if (choice == 1){
-            energyLevel += 3;
-        } else if (choice == 2){
             energyLevel += 2;
-        } else if ( choice == 3){
+        } else if (choice == 2){
             energyLevel += 1;
         }
     }
