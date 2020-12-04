@@ -2,14 +2,54 @@ public class virtualPet {
    int boredomLevel;
    int hungerLevel;
    int thirstLevel;
+   int energyLevel;
    boolean hungry;
+   boolean bored;
+   boolean thirst;
+   boolean tired;
    int maxCount = 20;
+
+    public boolean getBoredStatus(){
+        if (boredomLevel <= 10) {
+            return bored;
+        }
+        else
+            return !bored;
+    }
+
+
+    public boolean getHungerStatus() {
+        if (hungerLevel <= 10) {
+            return hungry;
+        }
+        else
+            return !hungry;
+    }
+
+
+    public boolean getThirstStatus() {
+        if (hungerLevel <= 10) {
+            return thirst;
+        }
+        else
+            return !thirst;
+    }
+
+
+    public boolean getTiredStatus() {
+        if (hungerLevel <= 10) {
+            return tired;
+        }
+        else
+            return !tired;
+    }
 
 
     public virtualPet(){
         boredomLevel = maxCount;
         thirstLevel = maxCount;
         hungerLevel = maxCount;
+        energyLevel = maxCount;
 
 
     //Lists out the max of the levels of each field
@@ -24,6 +64,7 @@ public class virtualPet {
           setBoredomLevel(boredomLevel -1);
           //uses a "set method" where the value can not exceed **maxCount**but will go down below the **maxCount**
           //This set method if found on line 81 on virtualPet class.
+          setEnergyLevel (energyLevel -1);
 
           System.out.println("Boredom Level: " + boredomLevel + " Hunger Level: " + hungerLevel +
                   " Thirst Level: " + thirstLevel);
@@ -42,13 +83,6 @@ public class virtualPet {
   //method above is a set method that makes it so that the hunger level can not exceed **maxCount**
 
 
-    public boolean getHungerStatus() {
-        if (hungerLevel <= 10) {
-            return hungry;
-        }
-        else
-            return !hungry;
-    }
 
     public void eat(int choice) {
         if (choice == 1){
@@ -98,6 +132,23 @@ public class virtualPet {
         } else if ( choice == 3){
             boredomLevel += 1;
         }
+    }
+
+    public void rest(int choice){
+        if (choice == 1){
+            energyLevel += 3;
+        } else if (choice == 2){
+            energyLevel += 2;
+        } else if ( choice == 3){
+            energyLevel += 1;
+        }
+    }
+    public void setEnergyLevel(int newValue){
+        energyLevel = newValue;
+        if (energyLevel > maxCount){
+            energyLevel = maxCount;
+        }
+
     }
 
 }

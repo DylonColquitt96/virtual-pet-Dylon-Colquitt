@@ -35,10 +35,9 @@ public class VirtualPetApplication {
             //it didn't come out right
             System.out.println("What would you like to do with " + petName + "?");
             System.out.println("1. Feed " + petName);
-            System.out.println("2. Tell " + petName + " a story");
-            System.out.println("3. Let " + petName + " fly around");
-            System.out.println("4. Ask " + petName + " to show off");
-            System.out.println("5. Do nothing");
+            System.out.println("2. Give " + petName + " a drink");
+            System.out.println("3. Play with " + petName);
+            System.out.println("4. Do nothing");
 
             choice = input.nextInt();
             if (choice == 1) {
@@ -110,15 +109,63 @@ public class VirtualPetApplication {
                     }
                 }
                 while (!myVirtualPet.getHungerStatus());
-/*            } else if (choice == 2) {
-                    int boredomLevel = 0;
-                    while (boredomLevel)
-            } else if (choice == 3) {
-            } else if (choice == 4) {
-                }*/
+                //choice 2 loop, playing with dragon effects boredom level
+            } else if (choice == 2) {
+                do {
+                    //play choices for user
+                    System.out.printf("How would you like to play with %s ? \n", petName);
+                    System.out.printf("1. Ride %s while they fly around the block \n", petName);
+                    System.out.printf("2. \n");
+                    System.out.println("3. Nothing \n");
 
+                    int playChoice = input.nextInt();
+
+                    myVirtualPet.play(playChoice);
+
+                    if (playChoice == 1) {
+                        System.out.println("I had so much fun!");
+                    } else if (playChoice == 2) {
+                        System.out.println("");
+                    } else if (playChoice == 3) {
+                        break;
+                    }
+                }
+                while (myVirtualPet.getBoredStatus());
+                //choice 3 loop, giving dragon drink effects thirst level
+            } else if (choice == 3) {
+                do {
+                    //drink choices for user
+                    System.out.printf("What will you give %s to drink? \n", petName);
+                    System.out.println("1. ");
+                    System.out.println("2.");
+                    System.out.println("3. Actually, let's do something else");
+
+                    int drinkChoice = input.nextInt();
+
+                    myVirtualPet.drink(drinkChoice);
+
+                    if (drinkChoice == 1) {
+                        System.out.println("");
+                    } else if (drinkChoice == 2) {
+                        System.out.println();
+                    } else if (drinkChoice == 3) {
+                        break;
+                    }
+                }
+                while (myVirtualPet.getThirstStatus());
+            } else if (choice == 4) {
+                do {
+                    System.out.printf("How long will you let %s rest?", petName);
+                    System.out.printf("Let %s rest 1 hour", petName);
+                    System.out.printf("Let %s rest 20 minutes", petName);
+                    System.out.printf("Do something else with %s", petName);
+                    int restChoice = input.nextInt();
+                    myVirtualPet.rest(restChoice);
+                }
+                while (myVirtualPet.getTiredStatus());
             }
             myVirtualPet.tickCounter();
+            //tick counter location so every time it cycles through an action, it will place the tick counter here
         }
     }
 
