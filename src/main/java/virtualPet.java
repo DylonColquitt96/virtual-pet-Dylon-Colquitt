@@ -136,9 +136,9 @@ public class virtualPet {
 
     public void rest(int choice){
         if (choice == 1){
-            energyLevel += 2;
+            energyLevel += 3;
         } else if (choice == 2){
-            energyLevel += 1;
+            energyLevel += 2;
         }
     }
     public void setEnergyLevel(int newValue){
